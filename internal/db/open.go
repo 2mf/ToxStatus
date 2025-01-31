@@ -17,7 +17,7 @@ type OpenOptions struct {
 func RegisterPragmaHook(cacheSize int) {
 	sql.Register("toxstatus_sqlite3", &sqlite3.SQLiteDriver{
 		ConnectHook: func(c *sqlite3.SQLiteConn) error {
-			fmt.Println("Executing pragmas")
+			//fmt.Println("Executing pragmas")
 			pragmas := fmt.Sprintf(`
 				PRAGMA journal_mode = WAL;
 				PRAGMA busy_timeout = 5000;

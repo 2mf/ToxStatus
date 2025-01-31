@@ -8,8 +8,8 @@ import (
 	"net"
 	"testing"
 
-	"github.com/Tox/ToxStatus/internal/db"
-	"github.com/Tox/ToxStatus/internal/models"
+	"github.com/2mf/ToxStatus/internal/db"
+	"github.com/2mf/ToxStatus/internal/models"
 	"github.com/alexbakker/tox4go/dht"
 	_ "github.com/mattn/go-sqlite3"
 )

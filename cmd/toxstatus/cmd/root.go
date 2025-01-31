@@ -10,14 +10,14 @@ import (
 	"net/http/pprof"
 	"os"
 	"os/signal"
-	"runtime"
+//	"runtime"
 	"sync"
 	"syscall"
 	"time"
 
-	"github.com/Tox/ToxStatus/internal/crawler"
-	"github.com/Tox/ToxStatus/internal/db"
-	"github.com/Tox/ToxStatus/internal/repo"
+	"github.com/2mf/ToxStatus/internal/crawler"
+	"github.com/2mf/ToxStatus/internal/db"
+	"github.com/2mf/ToxStatus/internal/repo"
 	"github.com/alexbakker/tox4go/toxstatus"
 	"github.com/lmittmann/tint"
 	"github.com/mattn/go-isatty"
@@ -44,7 +44,7 @@ var (
 )
 
 func init() {
-	const maxDefaultWorkers = 8
+	const maxDefaultWorkers = 2
 	Root.Flags().StringVar(&rootFlags.HTTPAddr, "http-addr", ":8003", "the network address to listen on for the HTTP server")
 	Root.Flags().DurationVar(&rootFlags.HTTPClientTimeout, "http-client-timeout", 10*time.Second, "the http client timeout for requests to nodes.tox.chat")
 	Root.Flags().StringVar(&rootFlags.PprofAddr, "pprof-addr", "", "the network address to listen of for the pprof HTTP server")
@@ -52,7 +52,7 @@ func init() {
 	Root.Flags().StringVar(&rootFlags.DB, "db", "", "the sqlite database file to use")
 	Root.Flags().IntVar(&rootFlags.DBCacheSize, "db-cache-size", 100000, "the sqlite cache size to use (in KB)")
 	Root.Flags().StringVar(&rootFlags.LogLevel, "log-level", "info", "the log level to use")
-	Root.Flags().IntVar(&rootFlags.Workers, "workers", min(maxDefaultWorkers, runtime.NumCPU()), "the amount of workers to use")
+	Root.Flags().IntVar(&rootFlags.Workers, "workers", 2, "the amount of workers to use")
 	Root.MarkFlagRequired("db")
 }
 

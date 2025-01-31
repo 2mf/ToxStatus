@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/Tox/ToxStatus/internal/version"
+	"github.com/2mf/ToxStatus/internal/version"
 	sqlite3 "github.com/mattn/go-sqlite3"
 	"github.com/spf13/cobra"
 )
@@ -36,7 +36,7 @@ func startVersion(cmd *cobra.Command, args []string) {
 	}
 	fmt.Println()
 	fmt.Printf("sqlite: %s \n", sqliteVersion)
-	fmt.Println("https://github.com/Tox/ToxStatus (AGPLv3)")
+	fmt.Println("https://github.com/2mf/ToxStatus (AGPLv3)")
 }
 
 func exitWithError(s string) {

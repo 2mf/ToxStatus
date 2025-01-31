@@ -1,4 +1,4 @@
-module github.com/Tox/ToxStatus
+module github.com/2mf/ToxStatus
 
 go 1.21
 

@@ -11,7 +11,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/Tox/ToxStatus/internal/repo"
+	"github.com/2mf/ToxStatus/internal/repo"
 	"github.com/alexbakker/tox4go/bootstrap"
 	"github.com/alexbakker/tox4go/dht"
 	"github.com/alexbakker/tox4go/dht/ping"
@@ -244,7 +244,7 @@ func (c *Crawler) Run(ctx context.Context, bsNodes []*dht.Node) error {
 			)
 
 			if !isGlobalUnicast(bsNode.IP) {
-				logger.Warn("Node ip is not a global unicast address")
+				logger.Debug("Node ip is not a global unicast address")
 				continue
 			}
 
@@ -473,7 +473,7 @@ func (c *Crawler) handleSendNodesPacket(ctx context.Context, node *dht.Node, pac
 			slog.String("addr", packetNode.Addr().String()))
 
 		if !isGlobalUnicast(packetNode.IP) {
-			logger.Warn("Node ip is not a global unicast address")
+			logger.Debug("Node ip is not a global unicast address")
 			continue
 		}
 
